@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>待办记录器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📋 待办记录器</h1>
+            <p class="subtitle">随手记录，高效完成</p>
+        </header>
+
+        <div class="input-section">
+            <div class="input-group">
+                <input 
+                    type="text" 
+                    id="todoInput" 
+                    placeholder="输入待办事项..." 
+                    class="todo-input"
+                >
+                <button id="addBtn" class="btn btn-add">添加</button>
+            </div>
+            <div class="quick-tags">
+                <span class="tag-label">快速标签：</span>
+                <button class="quick-tag" data-tag="🔴 紧急">🔴 紧急</button>
+                <button class="quick-tag" data-tag="🟡 重要">🟡 重要</button>
+                <button class="quick-tag" data-tag="🟢 普通">🟢 普通</button>
+                <button class="quick-tag" data-tag="💼 工作">💼 工作</button>
+                <button class="quick-tag" data-tag="📚 学习">📚 学习</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <span class="stat">总计: <span id="totalCount">0</span></span>
+            <span class="stat">已完成: <span id="doneCount">0</span></span>
+            <span class="stat">待处理: <span id="pendingCount">0</span></span>
+        </div>
+
+        <div class="filter-section">
+            <button class="filter-btn active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="active">待处理</button>
+            <button class="filter-btn" data-filter="completed">已完成</button>
+        </div>
+
+        <div class="todo-list" id="todoList">
+            <!-- 待办项目将动态插入这里 -->
+        </div>
+
+        <div class="empty-state" id="emptyState">
+            <p>暂无待办项目</p>
+            <p class="hint">开始输入第一个待办事项吧！</p>
+        </div>
+
+        <div class="action-buttons">
+            <button id="clearCompleted" class="btn btn-secondary">清除已完成</button>
+            <button id="exportData" class="btn btn-secondary">导出数据</button>
+            <button id="importData" class="btn btn-secondary">导入数据</button>
+            <input type="file" id="fileInput" accept=".json" style="display: none;">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
